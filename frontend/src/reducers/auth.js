@@ -2,7 +2,10 @@ import {
     LOGIN_SUCCESS,
     LOGIN_FAILED,
     USER_LOADED_SUCCESS,
-    USER_LOADED_FAILED
+    USER_LOADED_FAILED,
+    AUTHENTICATED_SUCCESS,
+    AUTHENTICATED_FAILED,
+    LOGOUT
 } from '../actions/types';
 
 const initialState = {
@@ -16,6 +19,11 @@ export default function reducer(state = initialState, action) {
     const { type, payload } = action;
 
     switch (type) {
+        case AUTHENTICATED_SUCCESS:
+            return {
+                ...state,
+                isAuthenticated: true
+            }
         case LOGIN_SUCCESS:
             localStorage.setItem('access', payload.access);
             return {
@@ -29,12 +37,18 @@ export default function reducer(state = initialState, action) {
                 ...state,
                 user: payload
             }
+        case AUTHENTICATED_FAILED:
+            return {
+                ...state,
+                isAuthenticated: false
+            }
         case USER_LOADED_FAILED:
             return {
                 ...state,
                 user: null
             }
         case LOGIN_FAILED:
+        case LOGOUT:
             localStorage.removeItem('access');
             localStorage.removeItem('refresh');
             return {
