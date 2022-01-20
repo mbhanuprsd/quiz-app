@@ -3,7 +3,7 @@ import {
     LOGIN_FAILED,
     USER_LOADED_SUCCESS,
     USER_LOADED_FAILED
-} from '../actions/types'
+} from '../actions/types';
 
 const initialState = {
     access: localStorage.getItem('access'),
@@ -12,7 +12,7 @@ const initialState = {
     user: null
 };
 
-export default function (state = initialState, action) {
+export default function reducer(state = initialState, action) {
     const { type, payload } = action;
 
     switch (type) {
