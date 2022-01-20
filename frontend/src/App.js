@@ -1,4 +1,5 @@
 import React from "react";
+import { Provider } from "react-redux";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Activate from "./containers/Activate";
 import Home from "./containers/Home";
@@ -7,9 +8,11 @@ import ResetPassword from "./containers/ResetPassword";
 import ResetPasswordConfirm from "./containers/ResetPasswordConfirm";
 import SignUp from "./containers/SignUp";
 import Layout from "./hocs/Layout";
+import store from "./store";
 
 const App = () => (
-    <Router>
+    <Provider store={store}>
+        <Router>
         <Layout>
             <Switch>
                 <Route exact path='/' component={Home} />
@@ -21,6 +24,7 @@ const App = () => (
             </Switch>
         </Layout>
     </Router>
+    </Provider>
 );
 
 export default App;
