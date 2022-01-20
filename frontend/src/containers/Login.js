@@ -30,7 +30,7 @@ const Login = ({ login, isAuthenticated }) => {
         <div className='container mt-5'>
             <h1>Sign In</h1>
             <p>Sign into your Account</p>
-            <form onSubmit={e => onSubmit(e)}>
+            <form onSubmit={e => onSubmit(e)} >
                 <div className='form-group'>
                     <input
                         className='form-control'
@@ -70,4 +70,4 @@ const mapStateToProps = state => ({
     isAuthenticated: state.auth.isAuthenticated
 });
 
-export default connect(null, { login })(Login);
+export default connect(mapStateToProps, { login })(Login);
