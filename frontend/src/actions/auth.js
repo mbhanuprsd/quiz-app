@@ -23,7 +23,6 @@ export const load_user = () => async dispatch => {
                 type: USER_LOADED_SUCCESS,
                 payload: response.data
             });
-            console.log("Login success for ", JSON.stringify(response.data));
         } catch (err) {
             dispatch({
                 type: USER_LOADED_FAILED
