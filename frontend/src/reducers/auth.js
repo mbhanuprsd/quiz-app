@@ -69,7 +69,8 @@ export default function reducer(state = initialState, action) {
                 ...state,
                 isAuthenticated: false,
                 access: null,
-                refresh: null
+                refresh: null,
+                user: null
             }
         case PASSWORD_RESET_SUCCESS:
         case PASSWORD_RESET_FAILED:

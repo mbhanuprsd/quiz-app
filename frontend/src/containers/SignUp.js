@@ -37,7 +37,7 @@ const SignUp = ({ signup, isAuthenticated }) => {
     return (
         <div className='container mt-5'>
             <h1>Sign Up</h1>
-            <p>Create and account for the Quiz App</p>
+            <p>Create an account for the Quiz App</p>
             <form onSubmit={e => onSubmit(e)} >
                 <div className='form-group'>
                     <input

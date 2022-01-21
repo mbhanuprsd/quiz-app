@@ -19,7 +19,7 @@ const NavigationBar = ({ logout, isAuthenticated }) => {
 
     const authLinks = () => (
         <li className='nav-item'>
-            <Link className='nav-link' to='/login' onClick={logout}>Logout</Link>
+            <Link className='nav-link' to='/' onClick={logout}>Logout</Link>
         </li>
     );
 
