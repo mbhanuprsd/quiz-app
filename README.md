@@ -1,13 +1,13 @@
-python -m venv env
-env\Scripts\activate.bat
-pip install -r requirements.txt
+python -m venv env<br>
+env\Scripts\activate.bat<br>
+pip install -r requirements.txt<br>
 
-npm install
-npm audit fix
-npm run build
+npm install<br>
+npm audit fix<br>
+npm run build<br>
 
-python manage.py makemigrations
-python manage.py migrate
-python manage.py collectstatic
+python manage.py makemigrations<br>
+python manage.py migrate<br>
+python manage.py collectstatic<br>
 
 python manage.py runserver
