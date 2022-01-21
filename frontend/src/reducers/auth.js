@@ -5,6 +5,10 @@ import {
     USER_LOADED_FAILED,
     AUTHENTICATED_SUCCESS,
     AUTHENTICATED_FAILED,
+    PASSWORD_RESET_SUCCESS,
+    PASSWORD_RESET_FAILED,
+    PASSWORD_RESET_CONFIRM_SUCCESS,
+    PASSWORD_RESET_CONFIRM_FAILED,
     LOGOUT
 } from '../actions/types';
 
@@ -56,6 +60,13 @@ export default function reducer(state = initialState, action) {
                 isAuthenticated: false,
                 access: null,
                 refresh: null
+            }
+        case PASSWORD_RESET_SUCCESS:
+        case PASSWORD_RESET_FAILED:
+        case PASSWORD_RESET_CONFIRM_SUCCESS:
+        case PASSWORD_RESET_CONFIRM_FAILED:
+            return {
+                ...state
             }
         default:
             return state

@@ -19,14 +19,14 @@ const NavigationBar = ({ logout, isAuthenticated }) => {
 
     const authLinks = () => (
         <li className='nav-item'>
-            <a className='nav-link' onClick={logout}>Logout</a>
+            <Link className='nav-link' to='/login' onClick={logout}>Logout</Link>
         </li>
     );
 
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
-                <Navbar.Brand>Quiz App</Navbar.Brand>
+                <Navbar.Brand href="">Quiz App</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
