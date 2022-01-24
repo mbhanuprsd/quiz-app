@@ -36,12 +36,12 @@ def get_secret(setting, secrets=secrets):
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = get_secret('SECRET_KEY')
+SECRET_KEY = "django-insecure-$@vyd+v$ebd&0-kh34#6djs566e-_*j074%7aw==1n1%h7u52o"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -94,11 +94,13 @@ WSGI_APPLICATION = 'quizapp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'quiz_app',
-        'USER': 'postgres',
-        'PASSWORD': get_secret('DB_PASSWORD'),
-        'HOST': 'localhost'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'ENGINE': 'django.db.backends.postgresql',
+        # 'NAME': 'quiz_app',
+        # 'USER': 'postgres',
+        # 'PASSWORD': get_secret('DB_PASSWORD'),
+        # 'HOST': 'localhost'
     }
 }
 

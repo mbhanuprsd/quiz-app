@@ -2,10 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from "react-redux";
 import { load_user } from "../actions/auth";
+import { logToConsole } from '../utils/utils';
 
 const Home = ({ user, load_user }) => {
-    console.log('Home page - ', JSON.stringify(user));
-
     const guestLinks = () => (
         <div>
             <p>Click the login button</p>
