@@ -2,9 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from "react-redux";
 import { load_user } from "../actions/auth";
-import { logToConsole } from '../utils/utils';
+import Unity, { UnityContext } from "react-unity-webgl";
 
 const Home = ({ user, load_user }) => {
+    console.log('Home page - ', JSON.stringify(user));
+
+    const unityContext = new UnityContext({
+        loaderUrl: "/build/build.loader.js",
+        dataUrl: "/build/build.data",
+        frameworkUrl: "/build/build.framework.js",
+        codeUrl: "/build/build.wasm",
+    });
+
     const guestLinks = () => (
         <div>
             <p>Click the login button</p>
@@ -13,9 +22,7 @@ const Home = ({ user, load_user }) => {
     );
 
     const authLinks = () => (
-        <div>
-            <p></p>
-        </div>
+        <Unity unityContext={unityContext} style={{ width: '100%', height: '100%' }} />
     );
 
     return (
